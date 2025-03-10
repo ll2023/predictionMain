@@ -52,3 +52,15 @@
 2025-03-10 11:16:33,372 - INFO - Loading configuration from config/config.yaml
 2025-03-10 11:16:33,377 - INFO - Processing AAPL
 2025-03-10 11:16:34,306 - INFO - Result for AAPL: {'ticker': 'AAPL', 'prediction': 119.84903720416747, 'indicators': {'sma': 239.45550003051758, 'macd': 0.24257437781736257}}
+2025-03-10 11:26:19,326 - INFO - Verifying environment...
+2025-03-10 11:26:19,326 - INFO - Loading configuration from config/config.yaml
+2025-03-10 11:26:19,329 - INFO - Processing AAPL
+2025-03-10 11:26:20,048 - INFO - Result for AAPL: {'ticker': 'AAPL', 'prediction': 119.84903720416747, 'indicators': {'sma': 239.45550003051758, 'macd': 0.24257437781736257}}
+2025-03-10 11:26:20,048 - INFO - Processing GOOGL
+2025-03-10 11:26:20,220 - INFO - Result for GOOGL: {'ticker': 'GOOGL', 'prediction': 86.57450153925828, 'indicators': {'sma': 178.43550033569335, 'macd': -5.286497257176791}}
+2025-03-10 11:26:20,221 - INFO - Processing MSFT
+2025-03-10 11:26:20,523 - INFO - Result for MSFT: {'ticker': 'MSFT', 'prediction': 198.0043328848387, 'indicators': {'sma': 403.1532348632812, 'macd': -7.14456909360382}}
+2025-03-10 11:26:29,748 - INFO - Verifying environment...
+2025-03-10 11:26:29,752 - INFO - Loading configuration from config/config.yaml
+2025-03-10 11:26:29,755 - INFO - Processing AAPL
+2025-03-10 11:26:30,471 - INFO - Result for AAPL: {'ticker': 'AAPL', 'prediction': 119.84903720416747, 'indicators': {'sma': 239.45550003051758, 'macd': 0.24257437781736257}}

@@ -1,0 +1,26 @@
+{
+  "AAPL": {
+    "ticker": "AAPL",
+    "prediction": 119.84903720416747,
+    "indicators": {
+      "sma": 239.45550003051758,
+      "macd": 0.24257437781736257
+    }
+  },
+  "GOOGL": {
+    "ticker": "GOOGL",
+    "prediction": 86.57450153925828,
+    "indicators": {
+      "sma": 178.43550033569335,
+      "macd": -5.286497257176791
+    }
+  },
+  "MSFT": {
+    "ticker": "MSFT",
+    "prediction": 198.0043328848387,
+    "indicators": {
+      "sma": 403.1532348632812,
+      "macd": -7.14456909360382
+    }
+  }
+}
