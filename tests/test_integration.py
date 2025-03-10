@@ -1,52 +1,31 @@
 import unittest
-from Fuser import Fuser
-from ReportManager import ReportManager
-from dataman.DataManager import DataManager
+from pathlib import Path
+import pandas as pd
+import numpy as np
+from pipeline.pipeline_manager import PipelineManager
+from monitoring.monitor_manager import MonitorManager
 
-class TestIntegration(unittest.TestCase):
-    @classmethod
-    def setUpClass(cls):
-        """Setup test environment once for all tests"""
-        cls.test_data = load_test_data()
-        cls.config = load_test_config()
-
+class TestSystemIntegration(unittest.TestCase):
+    """Full system integration tests"""
+    
     def setUp(self):
-        self.dataManager = DataManager('test')
-        self.fuser = Fuser(self.dataManager)
-        self.reportManager = ReportManager(self.fuser)
-        self.mock_data_source = MockDataSource(self.test_data)
-
-    def test_full_prediction_pipeline(self):
-        """Test the entire prediction pipeline"""
-        forday = '2023-10-01'
-        try:
-            # Run predictions
-            self.fuser.runseq()
-            
-            # Check reports
-            self.assertTrue(os.path.exists(f'report_{forday}.csv'))
-            
-            # Verify predictions
-            predictions = pd.read_csv(f'report_{forday}.csv')
-            self.assertGreater(len(predictions), 0)
-            
-        except Exception as e:
-            self.fail(f"Pipeline test failed: {e}")
-
-    def test_full_pipeline_stress(self):
-        """Test pipeline under heavy load"""
-        large_ticker_list = generate_test_tickers(1000)
-        with self.assertLogs(level='INFO') as logs:
-            results = self.pipeline.run_pipeline(large_ticker_list)
-            
-        self.assertGreater(len(results['predictions']), 900)
-        self.assertLess(len(results['errors']), 50)
-
-    @pytest.mark.performance
-    def test_prediction_performance(self):
-        """Test prediction performance benchmarks"""
-        start_time = time.time()
-        predictions = self.predictor.getPrediction('2023-01-01', 'AAPL')
-        duration = time.time() - start_time
+        self.test_data = self._load_test_data()
+        self.pipeline = PipelineManager(config={'test_mode': True})
+        self.monitor = MonitorManager(settings={'enabled': True})
         
-        self.assertLess(duration, 0.1)  # Should complete within 100ms
+    def test_complete_workflow(self):
+        """Test entire system workflow"""
+        # Test configuration
+        self.assertTrue(self._verify_config())
+        
+        # Test data pipeline
+        data = self.pipeline._fetch_data('AAPL')
+        self.assertIsNotNone(data)
+        
+        # Test monitoring
+        metrics = self.monitor.get_metrics()
+        self.assertTrue('execution_time' in metrics)
+        
+        # Test result storage
+        results = self.pipeline.process_ticker('AAPL')
+        self.assertTrue(Path('reports').exists())

@@ -64,3 +64,12 @@ def _verify_data_layer() -> bool:
     except Exception as e:
         logging.error(f"Data layer verification failed: {e}")
         return False
+
+def verify_readiness():
+    checks = {
+        'installation': _verify_installation(),
+        'data_access': _verify_data_access(),
+        'predictions': _verify_predictions(),
+        'monitoring': _verify_monitoring()
+    }
+    return all(checks.values())

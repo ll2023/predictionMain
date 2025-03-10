@@ -64,3 +64,55 @@
 2025-03-10 11:26:29,752 - INFO - Loading configuration from config/config.yaml
 2025-03-10 11:26:29,755 - INFO - Processing AAPL
 2025-03-10 11:26:30,471 - INFO - Result for AAPL: {'ticker': 'AAPL', 'prediction': 119.84903720416747, 'indicators': {'sma': 239.45550003051758, 'macd': 0.24257437781736257}}
+2025-03-10 12:26:43,216 - INFO - Verifying environment...
+2025-03-10 12:26:43,217 - INFO - Loading configuration from config/config.yaml
+2025-03-10 12:26:43,220 - INFO - Processing AAPL
+2025-03-10 12:26:44,127 - INFO - Result for AAPL: {'ticker': 'AAPL', 'prediction': 119.84903720416747, 'indicators': {'sma': 239.45550003051758, 'macd': 0.24257437781736257}}
+2025-03-10 12:26:51,812 - INFO - Verifying environment...
+2025-03-10 12:26:51,813 - INFO - Loading configuration from config/config.yaml
+2025-03-10 12:26:51,815 - INFO - Processing AAPL
+2025-03-10 12:26:52,505 - INFO - Result for AAPL: {'ticker': 'AAPL', 'prediction': 119.84903720461115, 'indicators': {'sma': 239.45550003051758, 'macd': 0.24257437870471676}}
+2025-03-10 12:26:52,505 - INFO - Processing GOOGL
+2025-03-10 12:26:52,700 - INFO - Result for GOOGL: {'ticker': 'GOOGL', 'prediction': 86.57450153925828, 'indicators': {'sma': 178.43550033569335, 'macd': -5.286497257176791}}
+2025-03-10 12:26:52,700 - INFO - Processing MSFT
+2025-03-10 12:26:52,900 - INFO - Result for MSFT: {'ticker': 'MSFT', 'prediction': 198.004332880791, 'indicators': {'sma': 403.1532348632812, 'macd': -7.144569101699233}}
+2025-03-10 12:26:58,744 - INFO - Verifying environment...
+2025-03-10 12:26:58,745 - INFO - Loading configuration from config/config.yaml
+2025-03-10 12:26:58,747 - INFO - Processing AAPL
+2025-03-10 12:26:59,471 - INFO - Result for AAPL: {'ticker': 'AAPL', 'prediction': 119.84903720416747, 'indicators': {'sma': 239.45550003051758, 'macd': 0.24257437781736257}}
+2025-03-10 12:36:58,715 - INFO - Verifying environment...
+2025-03-10 12:36:58,715 - INFO - Loading configuration from config/config.yaml
+2025-03-10 12:36:58,718 - INFO - Processing AAPL
+2025-03-10 12:36:59,461 - INFO - Result for AAPL: {'ticker': 'AAPL', 'prediction': 119.84903720461115, 'indicators': {'sma': 239.45550003051758, 'macd': 0.24257437870471676}}
+2025-03-10 12:36:59,461 - INFO - Processing GOOGL
+2025-03-10 12:36:59,653 - INFO - Result for GOOGL: {'ticker': 'GOOGL', 'prediction': 86.57450153925828, 'indicators': {'sma': 178.43550033569335, 'macd': -5.286497257176791}}
+2025-03-10 12:57:29,433 - ERROR - Execution failed: name 'PlatformValidator' is not defined
+Traceback (most recent call last):
+  File "/Users/lironlanger/Downloads/predictexp-main/run.py", line 51, in main
+    validator = PlatformValidator()
+                ^^^^^^^^^^^^^^^^^
+NameError: name 'PlatformValidator' is not defined
+2025-03-10 12:58:43,629 - ERROR - Execution failed: name 'PlatformValidator' is not defined
+Traceback (most recent call last):
+  File "/Users/lironlanger/Downloads/predictexp-main/run.py", line 51, in main
+    validator = PlatformValidator()
+                ^^^^^^^^^^^^^^^^^
+NameError: name 'PlatformValidator' is not defined
+2025-03-10 12:59:00,705 - ERROR - Execution failed: name 'PlatformValidator' is not defined
+Traceback (most recent call last):
+  File "/Users/lironlanger/Downloads/predictexp-main/run.py", line 51, in main
+    validator = PlatformValidator()
+                ^^^^^^^^^^^^^^^^^
+NameError: name 'PlatformValidator' is not defined
+2025-03-10 12:59:20,595 - ERROR - Execution failed: name 'PlatformValidator' is not defined
+Traceback (most recent call last):
+  File "/Users/lironlanger/Downloads/predictexp-main/run.py", line 51, in main
+    validator = PlatformValidator()
+                ^^^^^^^^^^^^^^^^^
+NameError: name 'PlatformValidator' is not defined
+2025-03-10 13:03:50,489 - ERROR - Execution failed: name 'PlatformValidator' is not defined
+Traceback (most recent call last):
+  File "/Users/lironlanger/Downloads/predictexp-main/run.py", line 51, in main
+    validator = PlatformValidator()
+                ^^^^^^^^^^^^^^^^^
+NameError: name 'PlatformValidator' is not defined

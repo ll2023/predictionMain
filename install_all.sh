@@ -1,46 +1,38 @@
 #!/bin/bash
 
 set -e  # Exit on error
+set -x  # Print commands for debugging
 
 echo "=== Starting Complete Installation ==="
 
-# Ensure clean environment
+# Clean up existing installation
 deactivate 2>/dev/null || true
 rm -rf .venv
+brew uninstall --force ta-lib || true
+pip uninstall -y TA-Lib || true
 
-# Create virtual environment with Python 3.11 (better compatibility)
-python3.11 -m venv .venv
+# Create virtual environment
+python3 -m venv .venv
 source .venv/bin/activate
 
-# Upgrade basic tools
-pip install --upgrade pip wheel setuptools numpy
+# Install core dependencies first
+pip install --no-cache-dir --upgrade pip wheel setuptools
+pip install --no-cache-dir numpy pandas yfinance click
 
-# Complete uninstall of TA-Lib
-brew uninstall --force ta-lib || true
-rm -rf /usr/local/opt/ta-lib
-brew cleanup
-
-# Install TA-Lib for M1/M2 Mac
-export HOMEBREW_NO_AUTO_UPDATE=1
+# Install TA-Lib with correct paths
 brew install ta-lib
+brew link --force ta-lib
 
-# Set the correct environment variables for M1/M2 Mac
-export TA_INCLUDE_PATH="$(brew --prefix ta-lib)/include"
-export TA_LIBRARY_PATH="$(brew --prefix ta-lib)/lib"
-export LDFLAGS="-L$(brew --prefix ta-lib)/lib"
-export CPPFLAGS="-I$(brew --prefix ta-lib)/include"
+# Set environment variables
+export TA_LIBRARY_PATH="/usr/local/opt/ta-lib/lib"
+export TA_INCLUDE_PATH="/usr/local/opt/ta-lib/include"
+export LDFLAGS="-L/usr/local/opt/ta-lib/lib"
+export CPPFLAGS="-I/usr/local/opt/ta-lib/include"
 
-# Install core dependencies first (except TA-Lib)
-pip install --no-cache-dir numpy==1.24.3 pandas click pyyaml
-
-# Install TA-Lib with specific version for Python 3.11
-pip install --no-cache-dir --no-binary :all: TA-Lib==0.4.24
-
-# Install remaining requirements
-pip install -r <(grep -v "TA-Lib" requirements.txt)
+# Install TA-Lib Python wrapper
+pip install --no-cache-dir TA-Lib
 
 # Verify installation
-echo "Verifying installation..."
 python -c "import talib; print('TA-Lib installed successfully')"
 
 echo "=== Installation Complete ==="

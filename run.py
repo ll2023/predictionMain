@@ -7,6 +7,9 @@ from config.settings import Settings
 from scripts.verify_environment import verify_environment
 from pipeline.pipeline_manager import PipelineManager
 from utils.results_handler import save_results_json, save_results_csv
+from monitoring.monitor_manager import MonitorManager
+import json
+from datetime import datetime
 
 def initialize_logging() -> logging.Logger:
     """Initialize logging with proper configuration"""
@@ -35,17 +38,26 @@ def initialize_logging() -> logging.Logger:
     return logger
 
 @click.command()
-@click.option('--config', '-c', type=click.Path(exists=True), required=True, help='Configuration file')
-@click.option('--tickers', '-t', multiple=True, required=True, help='Stock tickers')
-@click.option('--mode', '-m', type=click.Choice(['backtest', 'live', 'paper']), default='backtest')
-@click.option('--output', '-o', type=click.Choice(['json', 'csv']), default='json')
-@click.option('--validate/--no-validate', default=True, help='Run validation')
-@click.option('--monitor/--no-monitor', default=True, help='Enable monitoring')
-def main(config, tickers, mode, output, validate, monitor):
-    """Enhanced prediction engine with multiple modes"""
+@click.option('--config', '-c', type=click.Path(exists=True), required=True)
+@click.option('--tickers', '-t', multiple=True, required=True)
+@click.option('--validate/--no-validate', default=True)
+@click.option('--report-format', type=click.Choice(['basic', 'detailed']), default='detailed')
+def main(config, tickers, validate, report_format):
+    """Enhanced main with validation and reporting"""
     logger = initialize_logging()
     
     try:
+        if validate:
+            validator = PlatformValidator()
+            results = validator.validate_all()
+            
+            if not all(r.status for r in results.values()):
+                logger.error("Validation failed:")
+                for layer, report in results.items():
+                    if not report.status:
+                        logger.error(f"{layer}: {', '.join(report.messages)}")
+                sys.exit(1)
+
         # Verify environment first
         logger.info("Verifying environment...")
         if not verify_environment():
@@ -58,6 +70,12 @@ def main(config, tickers, mode, output, validate, monitor):
         # Initialize pipeline
         pipeline = PipelineManager(settings)
         
+        # Initialize monitor
+        monitor = MonitorManager(settings.monitoring)
+        
+        # Start monitoring
+        monitor.start_monitoring()
+        
         # Process predictions
         results = {}
         for ticker in tickers:
@@ -67,13 +85,19 @@ def main(config, tickers, mode, output, validate, monitor):
             logger.info(f"Result for {ticker}: {result}")
             
         # Save results based on format
-        if output == 'csv':
-            save_results_csv(results)
-        else:
-            save_results_json(results)
+        output_file = Path('reports') / f"predictions_{datetime.now():%Y%m%d_%H%M%S}.json"
+        output_file.parent.mkdir(exist_ok=True)
+        with open(output_file, 'w') as f:
+            json.dump(results, f, indent=2)
             
+        logger.info(f"Results saved to {output_file}")
+
+        # Enhanced reporting
+        report_manager = ReportManager(report_format)
+        report_manager.generate_report(results)
+        
     except Exception as e:
-        logger.error(f"Failed to run: {e}", exc_info=True)
+        logger.error(f"Execution failed: {e}", exc_info=True)
         sys.exit(1)
 
 if __name__ == '__main__':

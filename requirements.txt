@@ -5,8 +5,8 @@ pyyaml>=5.4
 click>=7.0
 yfinance>=0.2.3
 
-# Technical Analysis
-TA-Lib>=0.4.24
+# Technical Analysis - will be installed after system ta-lib
+TA-Lib==0.4.24
 
 # Data and Analysis
 scikit-learn>=0.24.0

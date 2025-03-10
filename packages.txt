@@ -1,0 +1,3 @@
+build-essential
+ta-lib
+python3-dev

@@ -1,0 +1,32 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+*.so
+
+# Distribution
+dist/
+build/
+*.egg-info/
+
+# Logs and data
+logs/
+data/
+*.log
+
+# IDE
+.vscode/
+.idea/
+*.swp
+
+# Environment
+.env
+.env.local
+
+# Cache
+.cache/
+.pytest_cache/
+
+# Reports
+reports/

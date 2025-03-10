@@ -169,6 +169,16 @@ def _verify_directories(dirs: List[str]) -> bool:
         logging.error(f"Directory verification failed: {e}")
         return False
 
+def verify_all() -> bool:
+    """Complete system verification"""
+    checks = [
+        verify_environment(),
+        verify_dependencies(),
+        verify_configuration(),
+        verify_data_access()
+    ]
+    return all(checks)
+
 @click.command()
 @click.option('--config', '-c', type=click.Path(exists=True), required=True)
 @click.option('--environment', '-e', type=click.Choice(['dev', 'prod']), default='dev')
