@@ -48,3 +48,7 @@
 2025-03-10 10:53:59,229 - INFO - Loading configuration from config/config.yaml
 2025-03-10 10:53:59,233 - INFO - Processing AAPL
 2025-03-10 10:54:00,172 - INFO - Result for AAPL: {'ticker': 'AAPL', 'prediction': 119.84903720416747, 'indicators': {'sma': 239.45550003051758, 'macd': 0.24257437781736257}}
+2025-03-10 11:16:33,360 - INFO - Verifying environment...
+2025-03-10 11:16:33,372 - INFO - Loading configuration from config/config.yaml
+2025-03-10 11:16:33,377 - INFO - Processing AAPL
+2025-03-10 11:16:34,306 - INFO - Result for AAPL: {'ticker': 'AAPL', 'prediction': 119.84903720416747, 'indicators': {'sma': 239.45550003051758, 'macd': 0.24257437781736257}}
