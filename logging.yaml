@@ -1,0 +1,24 @@
+version: 1
+disable_existing_loggers: false
+formatters:
+  standard:
+    format: '%(levelname)s - %(message)s'
+  detailed:
+    format: '%(asctime)s - %(name)s - %(levelname)s - %(message)s'
+handlers:
+  console:
+    class: logging.StreamHandler
+    level: INFO
+    formatter: standard
+    stream: ext://sys.stdout
+  file:
+    class: logging.FileHandler
+    level: DEBUG
+    formatter: detailed
+    filename: logs/run.log
+root:
+  level: INFO
+  handlers: [console, file]
+loggers:
+  yfinance:
+    level: WARNING  # Suppress yfinance warnings

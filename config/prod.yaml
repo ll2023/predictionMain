@@ -1,0 +1,9 @@
+environment: production
+debug: false
+log_level: INFO
+monitoring:
+  enabled: true
+  interval: 60
+data_source:
+  type: 'live'
+  cache_enabled: true

@@ -1,0 +1,17 @@
+[user]
+	name = binunalex
+	email = binunalex@gmail.com
+[core]
+	autocrlf = false
+[gui]
+	recentrepo = C:/Users/dolev/eclipse-workspace/gilat
+	recentrepo = C:/Users/dolev/Documents/predictclean
+[safe]
+	directory = C:/Users/dolev/eclipse-workspace/gilat
+	directory = c:\\Users
+	directory = c:\\Users\\dolev\\Documents\\predictclean
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true

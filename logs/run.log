@@ -1,0 +1,50 @@
+2025-03-09 13:30:02,544 - INFO - Verifying environment...
+2025-03-09 13:30:02,545 - INFO - Loading configuration from config/config.yaml
+2025-03-09 13:30:02,547 - INFO - Processing AAPL
+2025-03-09 13:30:03,713 - INFO - Result for AAPL: {'ticker': 'AAPL', 'error': 'input array has wrong dimensions'}
+2025-03-09 13:30:03,713 - INFO - Processing GOOGL
+2025-03-09 13:30:03,944 - INFO - Result for GOOGL: {'ticker': 'GOOGL', 'error': 'input array has wrong dimensions'}
+2025-03-09 13:42:22,138 - INFO - Verifying environment...
+2025-03-09 13:42:22,139 - INFO - Loading configuration from config/config.yaml
+2025-03-09 13:42:22,142 - INFO - Processing AAPL
+2025-03-09 13:42:22,823 - INFO - Result for AAPL: {'ticker': 'AAPL', 'error': 'input array has wrong dimensions'}
+2025-03-09 13:42:22,823 - INFO - Processing GOOGL
+2025-03-09 13:42:22,944 - INFO - Result for GOOGL: {'ticker': 'GOOGL', 'error': 'input array has wrong dimensions'}
+2025-03-09 13:45:36,260 - INFO - Verifying environment...
+2025-03-09 13:45:36,260 - INFO - Loading configuration from config/config.yaml
+2025-03-09 13:45:36,263 - INFO - Processing AAPL
+2025-03-09 13:45:36,986 - INFO - Result for AAPL: {'ticker': 'AAPL', 'error': 'input array has wrong dimensions'}
+2025-03-09 13:45:36,987 - INFO - Processing GOOGL
+2025-03-09 13:45:37,170 - INFO - Result for GOOGL: {'ticker': 'GOOGL', 'error': 'input array has wrong dimensions'}
+2025-03-09 13:48:11,458 - INFO - Verifying environment...
+2025-03-09 13:48:11,459 - INFO - Loading configuration from config/config.yaml
+2025-03-09 13:48:11,462 - INFO - Processing AAPL
+2025-03-09 13:48:12,083 - INFO - Result for AAPL: {'ticker': 'AAPL', 'prediction': 119.84903720416747, 'indicators': {'sma': 239.45550003051758, 'macd': 0.24257437781736257}}
+2025-03-09 13:48:12,083 - INFO - Processing GOOGL
+2025-03-09 13:48:12,210 - INFO - Result for GOOGL: {'ticker': 'GOOGL', 'prediction': 86.57450153925828, 'indicators': {'sma': 178.43550033569335, 'macd': -5.286497257176791}}
+2025-03-09 13:51:58,942 - INFO - Verifying environment...
+2025-03-09 13:51:58,942 - INFO - Loading configuration from config/config.yaml
+2025-03-09 13:51:58,946 - INFO - Processing AAPL
+2025-03-09 13:51:59,595 - INFO - Result for AAPL: {'ticker': 'AAPL', 'prediction': 119.84903720461115, 'indicators': {'sma': 239.45550003051758, 'macd': 0.24257437870471676}}
+2025-03-09 13:51:59,596 - INFO - Processing GOOGL
+2025-03-09 13:51:59,721 - INFO - Result for GOOGL: {'ticker': 'GOOGL', 'prediction': 86.57450153925828, 'indicators': {'sma': 178.43550033569335, 'macd': -5.286497257176791}}
+2025-03-09 13:58:08,292 - INFO - Verifying environment...
+2025-03-09 13:58:08,293 - INFO - Loading configuration from config/config.yaml
+2025-03-09 13:58:08,296 - INFO - Processing AAPL
+2025-03-09 13:58:08,944 - INFO - Result for AAPL: {'ticker': 'AAPL', 'prediction': 119.84903720416747, 'indicators': {'sma': 239.45550003051758, 'macd': 0.24257437781736257}}
+2025-03-09 13:58:08,944 - INFO - Processing GOOGL
+2025-03-09 13:58:09,072 - INFO - Result for GOOGL: {'ticker': 'GOOGL', 'prediction': 86.57450153925828, 'indicators': {'sma': 178.43550033569335, 'macd': -5.286497257176791}}
+2025-03-09 14:36:14,585 - INFO - Verifying environment...
+2025-03-09 14:36:14,585 - INFO - Loading configuration from config/config.yaml
+2025-03-09 14:36:14,589 - INFO - Processing AAPL
+2025-03-09 14:36:15,333 - INFO - Result for AAPL: {'ticker': 'AAPL', 'prediction': 119.84903720416747, 'indicators': {'sma': 239.45550003051758, 'macd': 0.24257437781736257}}
+2025-03-09 14:36:15,333 - INFO - Processing GOOGL
+2025-03-09 14:36:15,463 - INFO - Result for GOOGL: {'ticker': 'GOOGL', 'prediction': 86.57450153925828, 'indicators': {'sma': 178.43550033569335, 'macd': -5.286497257176791}}
+2025-03-09 15:19:01,698 - INFO - Verifying environment...
+2025-03-09 15:19:01,702 - INFO - Loading configuration from config/config.yaml
+2025-03-09 15:19:01,705 - INFO - Processing AAPL
+2025-03-09 15:19:02,413 - INFO - Result for AAPL: {'ticker': 'AAPL', 'prediction': 119.84903720416747, 'indicators': {'sma': 239.45550003051758, 'macd': 0.24257437781736257}}
+2025-03-10 10:53:59,228 - INFO - Verifying environment...
+2025-03-10 10:53:59,229 - INFO - Loading configuration from config/config.yaml
+2025-03-10 10:53:59,233 - INFO - Processing AAPL
+2025-03-10 10:54:00,172 - INFO - Result for AAPL: {'ticker': 'AAPL', 'prediction': 119.84903720416747, 'indicators': {'sma': 239.45550003051758, 'macd': 0.24257437781736257}}

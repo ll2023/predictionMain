@@ -1,0 +1,9 @@
+environment: development
+debug: true
+log_level: DEBUG
+monitoring:
+  enabled: true
+  interval: 30
+data_source:
+  type: 'test'
+  cache_enabled: true

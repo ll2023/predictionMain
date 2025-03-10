@@ -1,0 +1,30 @@
+technical_indicators:
+  sma:
+    type: "moving_average"
+    timeperiod: 20
+    weight: 0.5
+    min_data_points: 30  # Added minimum required data points
+  macd:
+    type: "momentum"
+    fastperiod: 12
+    slowperiod: 26
+    signalperiod: 9
+    weight: 0.5
+    min_data_points: 50  # Added minimum required data points
+
+monitoring:
+  enabled: true
+  log_level: INFO
+  error_threshold: 0.1
+
+reporting:
+  enabled: true
+  format: json
+  save_predictions: true
+
+system:
+  max_workers: 4
+  batch_size: 100
+  data_window: 120  # Days of historical data to fetch
+  cache_enabled: true
+  error_retries: 3
